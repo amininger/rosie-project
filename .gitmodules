@@ -1,18 +1,30 @@
-[submodule "april"]
-	path = april
-	url = git://april.eecs.umich.edu/home/git/april.git
 [submodule "libfreenect"]
 	path = libfreenect
 	url = git://github.com/OpenKinect/libfreenect.git
+[submodule "lcm"]
+	path = lcm
+	url = git://github.com/lcm-proj/lcm
+[submodule "april"]
+	path = april
+	url = git://april.eecs.umich.edu/home/git/april.git
+[submodule "magic"]
+	path = magic
+	url = git@umbrella.eecs.umich.edu:mininger/magic2.git
 [submodule "probcog"]
 	path = probcog
 	url = git@umbrella.eecs.umich.edu:mininger/probcog.git
+[submodule "arm"]
+	path = arm
+	url = git@umbrella.eecs.umich.edu:mininger/probcog.git
+[submodule "fetch"]
+	path = fetch
+	url = git@umbrella.eecs.umich.edu:mininger/probcog.git
 [submodule "soar"]
 	path = soar
-	url = https://github.com/SoarGroup/Soar.git
+	url = git@github.com:SoarGroup/soar
 [submodule "rosie"]
 	path = rosie
-	url = https://github.com/InstructoSoar/rosie.git
-[submodule "lcm"]
-	path = lcm
-	url = https://github.com/lcm-proj/lcm
+	url = git@github.com:InstructoSoar/rosie.git
+[submodule "fetch-rosie-setup"]
+	path = fetch-rosie-setup
+	url = git@github.com:emamanto/fetch-rosie-setup
