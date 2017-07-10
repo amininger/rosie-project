@@ -1,0 +1,158 @@
+Instructions for installing the rosie-project
+
+Note: Before you run things, make sure you've sourced the envvars
+
+################################################################
+####                    libfreenect                         ####
+################################################################
+
+http://openkinect.org
+
+# Prereqs
+cmake freeglut3-dev libxmu-dev libxi-dev libusb-1.0-0-dev
+
+# To Build
+cd libfreenect
+mkdir build
+cd build
+cmake ..
+make 
+sudo make install
+sudo ldconfig /usr/local/lib64/
+
+
+################################################################
+####                        lcm                             ####
+################################################################
+
+https://lcm-proj.github.io
+
+# Prereqs
+cmake (3.1+) libglib2.0-dev 
+
+# To Build
+cd lcm
+mkdir build
+cd uild
+cmake ..
+make
+sudo make install
+
+# Testing
+Try running lcm-spy, a window should pop up
+
+
+################################################################
+####                        april                           ####
+################################################################
+
+https://april.eecs.umich.edu/software/java.html
+
+# Prereqs
+ant subversion gtk-doc-tools libglib2.0-dev libusb-1.0-0-dev gv libncurses-dev autopoint libgl1-mesa-dev libpng12-dev libdc1394-22-dev
+
+Java 7 (8 seems to be unstable)
+Switch java compiler versions with 
+	'sudo update-alternatives --config javac'
+
+# To Build
+cd april/java
+ant
+
+# Testing (Make sure april.jar is on the $CLASSPATH)
+java april.vis.VisTest (Should launch a window with graphics)
+
+
+################################################################
+####                        magic                           ####
+################################################################
+
+# Setup magic2
+cd magic
+git checkout -b probcog origin/probcog
+git submodule init
+git submodule update
+cd april2
+git remote set-url origin git@github.com:mininger/april2.git
+git fetch
+git checkout -b probcog origin/probcog
+
+# To Build
+cd magic
+make -i
+(Can also use -j 20 to thread it, may have to run multiple times)
+
+
+################################################################
+####                        soar                            ####
+################################################################
+
+https://soar.eecs.umich.edu
+
+# Prereqs
+Java 7 or 8
+build-essential swig python-all-dev
+
+# To Build
+cd soar
+scons all
+(Optionally run with -j 20, this will run w/ 20 threads, 
+ If you get a build error, rerun the command and it should work)
+
+# Testing
+cd soar/out
+./soar
+java -jar SoarJavaDebugger.jar
+
+
+################################################################
+####                        rosie                           ####
+################################################################
+
+# Prereqs
+Soar, Java 7 or 8
+
+# To Build
+cd rosie/java
+ant
+cd rosie/tools/java
+ant
+
+
+################################################################
+####                         ros                            ####
+################################################################
+
+# Note: ROS is only required for the Fetch simulator
+# It will only work with Ubuntu 14.04
+
+Instructions Here:
+http://wiki.ros.org/indigo/Installation/Ubuntu
+
+
+################################################################
+####                        fetch                           ####
+################################################################
+
+# Prereqs
+ROS, Rosie
+
+# To Build
+cd fetch-rosie-setup
+sh setup.sh
+
+################################################################
+####                       probcog                          ####
+################################################################
+
+There are 3 directories: probcog, arm, and fetch
+one for each domain
+
+# Prereqs
+Rosie, Soar, April, Magic
+
+# To Build
+cd probcog/java
+ant
+(same w/ other ones)
+

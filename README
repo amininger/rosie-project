@@ -1,0 +1,71 @@
+########################################
+#
+#  Rosie Project
+#  University of Michigan
+#
+########################################
+
+Information about this repository for the Rosie Soar Agent + Domains
+
+1. CONTENTS
+
+[submodule "libfreenect"]
+	url = git://github.com/OpenKinect/libfreenect.git
+	A kinect library used with the tabletop domain
+
+[submodule "lcm"]
+	url = git://github.com/lcm-proj/lcm
+	A UDP broadcast tool used to send messages between components
+
+[submodule "april"]
+	url = git://april.eecs.umich.edu/home/git/april.git
+	Java GUI and Simulator tools used for the tabletop domain
+
+[submodule "magic"]
+	url = git@umbrella.eecs.umich.edu:mininger/magic2.git
+	C++ GUI and Simulator tools used for the magicbot domain
+
+[submodule "probcog"]
+[submodule "arm"]
+[submodule "fetch"]
+	url = git@umbrella.eecs.umich.edu:mininger/probcog.git
+	3 Different versions of probcog - one for each domain
+	This is a java interface between the Soar Agent and the domain
+
+[submodule "soar"]
+	url = git@github.com:SoarGroup/soar
+	The Soar kernel the agent runs in
+
+[submodule "rosie"]
+	url = git@github.com:InstructoSoar/rosie.git
+	The project containing the Rosie Agent soar code, 
+		General purpose java code for interfacing with Soar,
+		And some java tools for configuring and running the agent
+
+[submodule "fetch-rosie-setup"]
+	url = git@github.com:emamanto/fetch-rosie-setup
+	Contains scripts for setting up rosie to run with the fetch/ROS
+
+
+2. INSTALLATION
+
+
+
+3. CONFIGURATION
+
+Setup your environment variables by setting the environment variable
+	ROSIE_PROJ=/path/to/this/directory
+Then source the envvars file in this directory
+
+For example, add the following to ~/.bashrc (Assuming installed to $HOME)
+  export ROSIE_PROJ=$HOME/rosie-project
+  source $ROSIE_PROJ/envvars
+
+
+4. RUNNING
+
+In the scripts directory there are many command-line scripts for building
+	and running the agent
+
+
+
