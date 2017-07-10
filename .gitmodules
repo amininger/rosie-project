@@ -1,0 +1,18 @@
+[submodule "april"]
+	path = april
+	url = git://april.eecs.umich.edu/home/git/april.git
+[submodule "libfreenect"]
+	path = libfreenect
+	url = git://github.com/OpenKinect/libfreenect.git
+[submodule "probcog"]
+	path = probcog
+	url = git@umbrella.eecs.umich.edu:mininger/probcog.git
+[submodule "soar"]
+	path = soar
+	url = https://github.com/SoarGroup/Soar.git
+[submodule "rosie"]
+	path = rosie
+	url = https://github.com/InstructoSoar/rosie.git
+[submodule "lcm"]
+	path = lcm
+	url = https://github.com/lcm-proj/lcm
