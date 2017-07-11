@@ -1,0 +1,50 @@
+# Expecting the user to define the variable $ROSIE_PROJ to point to this folder
+
+source $ROSIE_PROJ/scripts/bashrc
+
+# LCM
+export LCM_HOME=$ROSIE_PROJ/lcm
+export CLASSPATH=$CLASSPATH:/usr/local/share/java/lcm.jar
+
+# APRIL
+export APRIL_HOME=$ROSIE_PROJ/april
+export CLASSPATH=$CLASSPATH:$APRIL_HOME/java/april.jar
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$APRIL_HOME/lib:$APRIL_HOME/java/jni/jgl
+alias java='java -ea -server'
+
+# MAGIC
+export MAGIC_HOME=$ROSIE_PROJ/magic
+export CLASSPATH=$CLASSPATH:$MAGIC_HOME/java/magic2_lcmtypes.jar
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MAGIC_HOME/bin
+
+# SOAR
+export SOAR_HOME=$ROSIE_PROJ/soar/out
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SOAR_HOME
+export CLASSPATH=$CLASSPATH:$SOAR_HOME/java/sml.jar:$SOAR_HOME/SoarJavaDebugger.jar
+
+# ROSIE
+export ROSIE_HOME=$ROSIE_PROJ/rosie
+export CLASSPATH=$CLASSPATH:$ROSIE_HOME/java/rosie.jar
+export CLASSPATH=$CLASSPATH:$ROSIE_HOME/tools/java/rosie-tools.jar
+export CLASSPATH=$CLASSPATH:$ROSIE_HOME/tools/antlr-4.5-complete.jar
+
+# PROBCOG
+export PROBCOG_HOME=$ROSIE_PROJ/probcog
+
+# ROS
+export CLASSPATH=$CLASSPATH:/home/aaron/sf/research/rosie-project/jrosbridge/target/jrosbridge-0.2.1-SNAPSHOT-fat.jar
+
+# Stuff for ROS/Fetch
+fetch18(){
+	export ROS_HOSTNAME=192.168.1.207
+	export ROS_MASTER_URI=http://fetch18:11311
+}
+fetch7(){
+	export ROS_HOSTNAME=192.168.1.207
+	export ROS_MASTER_URI=http://fetch7:11311
+}
+local_ros(){
+	export ROS_HOSTNAME=localhost
+	export ROS_MASTER_URI=http://localhost:11311
+}
+
