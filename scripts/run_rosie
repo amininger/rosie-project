@@ -14,7 +14,7 @@ do
 	arg="$1"
 	case $arg in
 		-t|--tabletop)
-			export PROBCOG_HOME=$ROSIE_PROJ/tabletop
+			export PROBCOG_HOME=$ROSIE_PROJ/arm
 			;;
 		-f|--fetch)
 			export PROBCOG_HOME=$ROSIE_PROJ/fetch

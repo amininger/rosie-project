@@ -19,20 +19,35 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MAGIC_HOME/bin
 
 # SOAR
 export SOAR_HOME=$ROSIE_PROJ/soar/out
+export PYTHONPATH=$PYTHONPATH:$SOAR_HOME
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SOAR_HOME
 export CLASSPATH=$CLASSPATH:$SOAR_HOME/java/sml.jar:$SOAR_HOME/SoarJavaDebugger.jar
 
 # ROSIE
 export ROSIE_HOME=$ROSIE_PROJ/rosie
+export ROSIE_AGENT=$ROSIE_HOME/agent
 export CLASSPATH=$CLASSPATH:$ROSIE_HOME/java/rosie.jar
 export CLASSPATH=$CLASSPATH:$ROSIE_HOME/tools/java/rosie-tools.jar
 export CLASSPATH=$CLASSPATH:$ROSIE_HOME/tools/antlr-4.5-complete.jar
 
+alias src-rosie="source $ROSIE_PROJ/pyrosieenv/bin/activate"
+alias soar-find-replace="$ROSIE_HOME/tools/find-replace-soar.sh"
+
+
 # PROBCOG
-export PROBCOG_HOME=$ROSIE_PROJ/probcog
+#export PROBCOG_HOME=$ROSIE_PROJ/probcog
+#export CLASSPATH=$CLASSPATH:$PROBCOG_HOME/java/probcog.jar
 
 # ROS
 export CLASSPATH=$CLASSPATH:/home/aaron/sf/research/rosie-project/jrosbridge/target/jrosbridge-0.2.1-SNAPSHOT-fat.jar
+
+# ROSIETHOR
+export PYTHONPATH=$PYTHONPATH:$ROSIE_PROJ:$ROSIE_PROJ/ai2thor
+
+# COZMOSOAR
+export PYTHONPATH=$PYTHONPATH:$ROSIE_PROJ:$ROSIE_PROJ/cozmosoar
+alias src-cozmo-env="source $ROSIE_PROJ/cozmosoar/pycozmoenv/bin/activate"
+
 
 # Stuff for ROS/Fetch
 fetch18(){

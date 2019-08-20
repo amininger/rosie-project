@@ -7,7 +7,7 @@ do
 
 	case $key in
 		-t|--tabletop)
-			export PROBCOG_HOME=$ROSIE_PROJ/tabletop
+			export PROBCOG_HOME=$ROSIE_PROJ/arm
 			;;
 		-f|--fetch)
 			export PROBCOG_HOME=$ROSIE_PROJ/fetch

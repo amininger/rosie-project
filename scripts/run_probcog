@@ -8,13 +8,15 @@ export PROBCOG_HOME=$ROSIE_PROJ/probcog
 # Run in background
 BG="FALSE"
 
+SIM_LEVEL=0
+
 # Iterate over each argument given
 while [[ $# -gt 0 ]]
 do
 	arg="$1"
 	case $arg in
 		-t|--tabletop)
-			export PROBCOG_HOME=$ROSIE_PROJ/tabletop
+			export PROBCOG_HOME=$ROSIE_PROJ/arm
 			DOMAIN="tabletop"
 			;;
 		-f|--fetch)
@@ -27,6 +29,9 @@ do
 			;;
 		-b|--background)
 			BG="TRUE"
+			;;
+		-s|--simulate)
+			SIM_LEVEL=2
 			;;
 		*)
 			WORLD_FILE=$1
@@ -47,9 +52,9 @@ export CLASSPATH=$CLASSPATH:$PROBCOG_HOME/java/probcog.jar
 cd $PROBCOG_HOME
 if [ "$DOMAIN" == "tabletop" ]; then
 	if [ "$BG" == "TRUE" ]; then
-		java probcog.gui.PerceptionGUI -w $WORLD_FILE -c $PROBCOG_HOME/config/probcog.config &
+		java probcog.gui.PerceptionGUI -w $WORLD_FILE -c $PROBCOG_HOME/config/probcog.config -s $SIM_LEVEL &
 	else
-		java probcog.gui.PerceptionGUI -w $WORLD_FILE -c $PROBCOG_HOME/config/probcog.config
+		java probcog.gui.PerceptionGUI -w $WORLD_FILE -c $PROBCOG_HOME/config/probcog.config -s $SIM_LEVEL
 	fi
 elif [ "$DOMAIN" == "fetch" ]; then
 	if [ "$BG" == "TRUE" ]; then
